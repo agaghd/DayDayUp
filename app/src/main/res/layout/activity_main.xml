@@ -17,7 +17,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         android:alpha="0.3"
-        tools:src="@drawable/shamemaru_aya"
+        tools:src="@drawable/alice"
         tools:ignore="ContentDescription"/>
 
     <TextView
