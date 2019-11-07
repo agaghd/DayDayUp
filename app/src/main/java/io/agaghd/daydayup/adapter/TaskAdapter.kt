@@ -1,5 +1,6 @@
 package io.agaghd.daydayup.adapter
 
+import android.annotation.SuppressLint
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -34,6 +35,7 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.MyHolder>() {
         return datas.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(myHolder: MyHolder, position: Int) {
         val task = datas[position]
         myHolder.iconIv.setImageResource(task.imgRes)
@@ -45,7 +47,8 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.MyHolder>() {
             notifyItemChanged(position)
         }
         myHolder.completeBtn.isEnabled = !task.completed
-        myHolder.completeBtn.text = if (task.completed) "已完成" else "完成"
+        myHolder.completeBtn.text = if (task.completed) ("+ " + task.point) else "完成"
+        myHolder.pointTv.text = if (task.completed) "" else task.point.toString()
     }
 
     class MyHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -53,6 +56,7 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.MyHolder>() {
         val nameTv: TextView = view.findViewById(R.id.name_tv)
         val discriptionTv: TextView = view.findViewById(R.id.discription_tv)
         val completeBtn: Button = view.findViewById(R.id.complete_btn)
+        val pointTv: TextView = view.findViewById(R.id.point_tv)
     }
 
     interface CompleteCallback {
