@@ -4,16 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:background="#80EEAA00"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
-
-    <ImageView
-        android:id="@+id/bg_iv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:alpha="0.3"
-        tools:ignore="ContentDescription"/>
 
     <TextView
         android:id="@+id/score_tv"
