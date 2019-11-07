@@ -7,4 +7,11 @@ package io.agaghd.daydayup.pojo
  * point：分数
  * description:描述
  */
-data class Task(var id: Long, var name: String, var point: Int, var description: String)
+data class Task(
+    var id: Long,
+    val imgRes: Int,
+    var name: String,
+    var point: Int,
+    var description: String,
+    var completed: Boolean
+)
